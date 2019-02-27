@@ -1,0 +1,86 @@
+
+// типографика
+.site-link
+  text-decoration: none
+  transition: $animate
+  color: $black
+.site-link:hover
+  color: $accent
+  text-decoration: none
+  
+.title-1
+  font-size: 100px
+  font-weight: 700
+  letter-spacing: .025em
+.title-2
+  font-size: 52px
+  font-weight: 600
+  line-height: 1.2
+  letter-spacing: .05em
+.title-3
+  font-size: 26px
+  font-weight: 500
+  line-height: 1.2
+  letter-spacing: 0px
+.title-4
+  font-size: 22px
+@media (max-width: 680px)
+  .title-1
+    font-size: 78px
+@media (max-width: 500px)
+  .title-1
+    font-size: 58px
+  .title-2
+    font-size: 30px
+  .title-3
+    font-size: 24px
+  .title-4
+    font-size: 18px
+
+.main-btn
+  background-color: $accent
+  padding: 20px 25px
+  border-radius: 5px
+  border: 1px solid $accent
+  color: #fff
+  text-transform: uppercase
+  text-decoration: none
+  letter-spacing: .1em
+  white-space: nowrap
+  text-overflow: ellipsis
+  transition: all .3s ease-in-out
+  font-weight: 700
+  font-size: 13px
+.main-btn:hover
+  color: #fff
+  text-decoration: none
+  background-color: #b7181f
+  
+.main-btn--reverse
+  background-color: #fff
+  color: #333333
+  font-weight: 700
+.main-btn--reverse:hover
+  background-color: $accent
+  color: #fff
+.main-btn--round
+  border-radius: 50%
+  width: 50px
+  height: 50px
+
+.p-preloader
+  font-family: 'Kalam', cursive
+  font-size: 24px
+  font-weight: 800
+.t-center
+  text-align: center
+// прочее 
+
+.animated
+  webkit-animation-duration: .7s
+  animation-duration: .7s
+  -webkit-animation-fill-mode: both
+  animation-fill-mode: both
+  opacity: 1
+section 
+  padding: 40px 0

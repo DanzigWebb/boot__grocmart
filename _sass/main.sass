@@ -1,20 +1,379 @@
+@import "vars"
+@import "norm"
+@import "fonts"
+@import "libs"
 
-// импорт инструментария
-@import 'tools/vars'
-@import 'tools/norm'
-@import 'basics/fonts'
+::placeholder
+  color: #666
 
-// кастомизация шаблона
+::selection
+  background-color: $accent
+  color: #fff
 
-@import 'my_pages/header'
-@import 'my_pages/footer'
+body
+  font-size: 16px
+  min-width: 320px
+  position: relative
+  line-height: 1.65
+  overflow-x: hidden
+  color: $text
+  input, textarea
+    border: #666 1px solid
+    outline: none
+    &:focus:required:invalid
+      border-color: red
+    &:required:valid
+      border-color: green
 
-// главные страницы
+.img-responsive
+  display: block
+  max-width: 100%
+  height: auto
+  &.img-width
+    width: 100%
 
-@import 'my_pages/mypage/mainpage'
-// @import 'my_pages/mypage/services'
+.text-center
+  text-align: center
 
-// даптивное меню гамбургер
+b, strong
+  font-weight: bold
 
-@import 'libs/hamburgers/hamburgers'
-@import 'mmenu/dist/jquery.mmenu.all.css'
+// код проекта
+  
+// хедер
+.header-content
+  height: 140px
+
+.header-menu-list
+  display: flex
+  justify-content: space-between
+  margin: 0
+  li
+    list-style: none
+
+.header-menu__link
+  text-transform: uppercase
+  font-weight: 700
+  color: $black
+  font-size: 14px
+  transition: $animate
+  text-decoration: none
+  letter-spacing: .1em
+
+.header-menu__link:hover, .header-menu__link:active
+  color: $accent
+  text-decoration: none
+@media (max-width: 1050px)
+  .header-menu-list
+    display: none
+
+// mmenu
+
+.header-site
+  .hamburger
+    display: none
+
+
+
+    
+.timeline
+  padding: $gutter*2 0
+  +media-breakpoint-down(xs)
+    padding: $gutter*2 5%
+  &-item
+    padding: $gutter/2 0
+    position: relative
+    &:before
+      content: "\f192"
+      font-family: "Font Awesome 5 Free"
+      font-weight: 900
+      color: $accent
+      background-color: $gray
+      width: 1px
+      height: 100%
+      position: absolute
+      line-height: 450%
+      text-indent: -7px
+
+    &:nth-child(odd)
+      text-align: right
+      padding-right: 90px + $gutter
+      .timeline-item__img
+        right: $gutter
+      &:before
+        right: 0
+      +media-breakpoint-down(xs)
+        text-align: left
+        padding-left: 90px + $gutter
+        padding-right: 0
+        .timeline-item__img
+          left: $gutter
+        &:before
+          left: 0
+
+    &:nth-child(even)
+      +make-col-offset(6)
+      padding-left: 90px + $gutter
+      .timeline-item__img
+        left: $gutter
+      &:before
+        left: -1px
+      +media-breakpoint-down(xs)
+        +make-col-offset(0)
+        &:before
+          right: 0
+// слайдер
+.main-slider
+  background-image: url(https://livedemo00.template-help.com/wt_prod-21756/images/slide-2.jpg)
+  background-size: cover
+  background-position: center center
+  min-height: 800px
+  display: flex
+  align-items: center
+.main-slider-heading
+  color: #fff
+.main-slider-heading__header
+  margin: 0
+.main-slider-heading__title
+  line-height: 1.6
+.main-slider-heading__footer
+  margin-bottom: 60px
+
+// о нас
+.about-us__img
+  width: 100%
+  background-image: url(https://livedemo00.template-help.com/wt_prod-21756/images/about-576x537.jpg)
+  background-size: contain
+  background-repeat: no-repeat
+  height: auto
+  background-position: bottom center
+
+.about-us-heading
+  padding: 130px 0
+
+.about-us-preloader
+  color: $green
+  margin: 0
+
+.about-us__title
+  margin: 0
+  line-height: 2
+  font-weight: 700
+
+.about-us__txt
+  margin-bottom: 40px
+
+.about-us-heading-row
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  position: relative
+.main-btn--about-us
+  margin-right: 40px
+  display: flex
+  align-items: center
+  justify-content: center
+  .fas
+    font-size: 16px
+
+.about-us-heading-autor__link
+  text-transform: uppercase
+  letter-spacing: 0
+  font-weight: 700
+  font-size: 14px
+.about-us__position
+  font-size: 14px
+  font-style: italic
+  color: $green
+.about-us__position
+  margin: 0
+.about-us-heading__signature
+  position: absolute
+  right: 0
+
+
+@media (max-width: 992px)
+  .about-us-heading
+    padding-top: 20px
+  .about-us__img
+    min-height: 90vh
+    background-repeat: no-repeat
+@media (max-width: 400px)
+  .about-us-heading__signature
+    bottom: -80px
+  .about-us__img
+    min-height: 70vh
+@media (max-width: 330px)
+  .about-us__img
+    min-height: 50vh
+
+// особенности
+.specials--black
+  background-color: #000
+.specials
+  background-image: url(https://livedemo00.template-help.com/wt_prod-21756/images/parallax-3.jpg)
+  background-size: cover
+  padding: 60px 0
+  color: #fff
+  position: relative
+  .fas
+    display: block
+    font-size: 39px
+    margin-bottom: 20px
+    color: $green
+.specials:before
+  content: ''
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  top: 0
+  background-color: rgba(0, 0, 0, 0.7)
+.specials__title
+  font-weight: 700
+  color: #fff
+  margin-bottom: 20px
+  display: block
+
+// комментарии
+.comments
+  background-image: url(https://livedemo00.template-help.com/wt_prod-21756/images/bg-image-5.jpg)
+  background-size: cover
+  background-position: center center
+  .owl-carousel
+    .owl-item
+      img
+        width: 60px
+        height: 60px
+        border-radius: 100%
+        
+.comments-heading
+  padding: 80px 0
+.comments-heading__txt
+  color: $green
+  margin: 0
+
+.comments-field
+  padding: 60px
+  padding-top: 120px
+  border-radius: 60px
+  box-shadow: 0 0 18px 0 rgba(0,0,0,.13)
+  margin: 10px
+  background-color: #fff
+  position: relative
+  +media-breakpoint-down(xs)
+    padding-left: $gutter
+    padding-right: $gutter
+    padding-top: 80px
+  &:before
+    content: '"'
+    position: absolute
+    top: 0
+    right: 0
+    left: 0
+    text-align: center
+    font-size: 90px
+    color: $green
+    font-family: 'Kalam', cursive
+  &__txt 
+    text-align: center
+    color: $gray
+    font-size: 20px
+    +media-breakpoint-down(xs)
+      font-size: 16px
+  &-autor
+    align-items: center
+    justify-content: center
+    &__img
+      margin-right: 20px
+    &__name
+      margin: 0
+      color: $black
+      text-transform: uppercase
+      font-weight: 500
+      span 
+        display: block
+        color: $green
+        font-style: italic
+
+// ссылки
+
+.salelinks-link__img
+  width: 100%
+  padding-bottom: $gutter + 7px
+  +media-breakpoint-down(lg)
+    padding-bottom: $gutter + 4px
+  +media-breakpoint-down(md)
+    padding-bottom: $gutter
+  +media-breakpoint-down(sm)
+    padding-bottom: $gutter - 4px
+  
+// бренды
+
+.brands
+  background-image: url(https://livedemo00.template-help.com/wt_prod-21756/images/parallax-6.jpg)
+  background-size: cover
+  padding: 90px 0
+  position: relative
+  &:before
+    content: ''
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    background-color: rgba(0, 0, 0, 0.45)
+    position: absolute
+
+.brands-link__img
+  max-height: 90px
+  max-width: 105px
+  transition: $animate
+  &:hover
+    opacity: 0.75
+
+// FAQ
+
+.mainfaq-products
+  padding: 40px
+  background-image: url(https://livedemo00.template-help.com/wt_prod-21756/images/bg-pattern-1.jpg)
+  background-size: cover
+  background-position: center center
+.mainfaq-products-item-imgwrap
+  max-width: 270px
+  margin: auto
+  margin-bottom: 20px
+
+.mainfaq-products-item
+  text-align: center
+  text-transform: uppercase
+.mainfaq-products-item__title
+  font-weight: 700
+.mainfaq-products-item__price
+  text-decoration: none
+  color: $green
+  font-size: 18px
+  font-weight: 600
+  span 
+    color: $gray
+    text-decoration: line-through
+
+
+// карусель
+body
+  .owl-theme 
+    .owl-dots 
+      .owl-dot 
+        span
+          width: 14px
+          height: 14px
+body
+  .owl-theme 
+    .owl-dots 
+      .owl-dot.active, .owl-dot:hover
+        span
+          background-color: $green
+
+// конец кода проекта
+
+// всегда внизу
+@import "media"
