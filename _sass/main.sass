@@ -199,6 +199,7 @@ b, strong
   position: relative
   display: inline-block
   padding: 10px 0
+  transition: $animate
   +media-breakpoint-down(xs)
     position: absolute
     display: flex
@@ -255,8 +256,8 @@ b, strong
       background: $green
       z-index: -1
       transition: $animate
-    +media-breakpoint-down(xs)
-      height: 0
+      +media-breakpoint-down(xs)
+        height: 0
 .products-menu__link:hover
   color: $green
 .products-menu__link:hover:before
