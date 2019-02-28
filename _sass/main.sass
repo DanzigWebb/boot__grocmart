@@ -242,21 +242,21 @@ b, strong
     color: $green
     +media-breakpoint-down(xs)
       border-bottom: none
-  &:before
-    position: absolute
-    content: ''
-    bottom: -4px
-    left: 0
-    right: 0
-    margin: auto
-    height: 4px
-    width: 0
-    border-radius: 6px
-    background: $green
-    z-index: -1
-    transition: $animate
+    &:before
+      position: absolute
+      content: ''
+      bottom: -4px
+      left: 0
+      right: 0
+      margin: auto
+      height: 4px
+      width: 0
+      border-radius: 6px
+      background: $green
+      z-index: -1
+      transition: $animate
     +media-breakpoint-down(xs)
-      content: none
+      height: 0
 .products-menu__link:hover
   color: $green
 .products-menu__link:hover:before
@@ -274,6 +274,10 @@ b, strong
   +media-breakpoint-down(xs)
     display: inline
 
+.products-box
+  margin-top: 60px
+.products-box__item
+  text-align: center
 // комментарии
 .comments
   background-image: url(https://livedemo00.template-help.com/wt_prod-21756/images/bg-image-5.jpg)
@@ -370,6 +374,7 @@ body
   max-height: 90px
   max-width: 105px
   transition: $animate
+  margin: auto
   &:hover
     opacity: 0.75
 

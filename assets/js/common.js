@@ -52,15 +52,17 @@ $(document).ready(function(){
     });
     $('.brands-carousel').owlCarousel({
         loop:true,
-        margin:120,
+        margin:0,
         autoplay:true,
         autoplayTimeout:2000,
         autoplayHoverPause:true,
+        nav: false,
         responsiveClass:false,
         responsive:{
             0:{
                 items:2,
-                nav:true,
+                nav:false,
+                margin:0,
                 loop:true
             },
             600:{
