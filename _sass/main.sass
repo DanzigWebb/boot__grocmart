@@ -406,27 +406,47 @@ body
     color: $gray
     text-decoration: line-through
 // faq-аккордион
-button.accordion
-  background: $accent
-  color: #fff
-  cursor: pointer
-  border: 0
-  padding: 18px
-  width: 90%
-  text-align: left
-  font-size: 18px
-  transition: .4s
-button.accordion:focus
+.mainfaq-accordion
+  padding: 20px
+button
   outline: none
-button.accordion.active, button.accordion:hover
+.mainfaq-accordion__btn
+  font-size: 18px
+  background-color: #fff
+  display: block
+  padding: 25px 20px
+  font-weight: 500
+  position: relative
+  padding-left: 50px
+  margin-bottom: 10px
+  width: 100%
+  border: 0
+  box-shadow: 0 1px #e2dddd
+  outline: none
+  &:before
+    content: '\f105'
+    font-weight: 900
+    font-family: "Font Awesome 5 Free"
+    width: 40px
+    height: 40px
+    font-size: 24px
+    padding: 12px
+    color: $green
+    border-radius: 100%
+    display: block
+    line-height: 15px
+    text-align: center
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2)
+    position: absolute
+    left: 0
+    transition: 0.3s ease all
+.mainfaq-accordion__btn:hover:before, .active:before
+  transform: rotate(90deg)
+  color: #fff
   background-color: $green
 .panel
-  padding: 0 18px
-  color: #000
   max-height: 0
   overflow: hidden
-  width: 67.45%
-  margin: 0 auto
   transition: max-height .2s ease-out
 
 // карусель

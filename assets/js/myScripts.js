@@ -35,61 +35,50 @@ function linkAddClass () {
   };
 };
 
-// аккардеон
 
+
+// аккардеон
+function takeAccordion () {
+// поиск разметки аккордиона
 var acc = document.getElementsByClassName("mainfaq-accordion")[0];
-var accBtn = acc.getElementsByTagName("button")
-var accPanel = acc.getElementsByTagName("div");
+// поиск кнопок
+var accBtn = acc.getElementsByTagName("button");
+
+// первый элемент активен при загрузке страницы --начало
+accBtn[0].classList.add("active");
+accBtn[0].nextElementSibling.style.maxHeight = accBtn[0].nextElementSibling.scrollHeight + "px"; 
+// -- конец
 
 function openAcc () {
+  // определение панелей аккардиона как следующий элемент после кнопки
     var panel = this.nextElementSibling
+    // присвоение класса при нажатии на кнопку
     this.classList.toggle("active");
+    // перебор псевдомассива с кнопками
     for (var j = 0; j < accBtn.length; j ++ ) {
+      // сворачивание панели при выборе другой кнопки
+      // условие, является ли текущая кнопка активной
       if (accBtn[j] !== this) {
+        // если кнопка не является активной, все остальные панели в массиве сворачивается, а кнопки становятся не активными
         accBtn[j].classList.remove("active");
         accBtn[j].nextElementSibling.style.maxHeight = null;
       }
     }
+    // если (при клике) панель имеет значение максимальной высоты, то оно обнуляется
     if (panel.style.maxHeight) {
       panel.style.maxHeight = null;
     }
     else {
+      // иначе (если при клике панель имеет высоту = 0) панеле присваивается значение высоты = высоте контента 
       panel.style.maxHeight = panel.scrollHeight + "px"; 
     }
     
   }
-// for (var j = 0; j < panel.length; j ++) {
-      //   if (panel.style.maxHeight) {
-      //   panel.style.maxHeight = null;
-      //   }
-      // }
-for (i = 0; i < accBtn.length; i++) { 
-  var checkBtn = accBtn[i];
-  console.log(checkBtn)
-  checkBtn.addEventListener('click', openAcc);
+  // запуск функции при клике на кнопку в переборе псевдамассивов кнопок
+  for (i = 0; i < accBtn.length; i++) { 
+    var checkBtn = accBtn[i];
+    checkBtn.addEventListener('click', openAcc);
+}
 }
 
-// for (i = 0; i < accBtn.length; i++) {
-//   accBtn[i].onclick = function() {
-//     this.classList.toggle("active");
-
-//     var panel = this.nextSibling;
-//     panel.style.maxHeight = Panel.scrollHeight + "px"
-//     for ( var j = 0; j < accPanel.length; j++) {
-//       accPanel[j].style.maxHeight = accPanel.scrollHeight + "px"
-//     }
-    
-    
-//   }
-// }
-
-
-// function openAcc () {
-//   for (i = 0; i < accBtn.length; i++) {
-//     var checkBtn = accBtn[i];
-//     checkBtn.classList.toggle("active");
-//     console.log(checkBtn.nextElementSibling)
-//     var myAccPanel = checkBtn.nextElementSibling;
-//     myAccPanel.style.maxHeight = myAccPanel.scrollHeight + "px"
-//   }
-// }
+takeAccordion ()
