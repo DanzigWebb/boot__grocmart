@@ -279,6 +279,7 @@ b, strong
   margin-top: 60px
 .products-box__item
   text-align: center
+
 // комментарии
 .comments
   background-image: url(https://livedemo00.template-help.com/wt_prod-21756/images/bg-image-5.jpg)
@@ -404,7 +405,29 @@ body
   span 
     color: $gray
     text-decoration: line-through
-
+// faq-аккордион
+button.accordion
+  background: $accent
+  color: #fff
+  cursor: pointer
+  border: 0
+  padding: 18px
+  width: 90%
+  text-align: left
+  font-size: 18px
+  transition: .4s
+button.accordion:focus
+  outline: none
+button.accordion.active, button.accordion:hover
+  background-color: $green
+.panel
+  padding: 0 18px
+  color: #000
+  max-height: 0
+  overflow: hidden
+  width: 67.45%
+  margin: 0 auto
+  transition: max-height .2s ease-out
 
 // карусель
 body

@@ -1,6 +1,5 @@
 
 
-
 $(document).ready(function() {
     $("#my-menu").mmenu({
         extensions: ['effect-menu-slide', 'pagedim-black', "fx-listitems-fade", 'position-right'],
