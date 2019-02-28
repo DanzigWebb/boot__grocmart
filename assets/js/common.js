@@ -61,6 +61,7 @@ $(document).ready(function(){
             0:{
                 items:2,
                 nav:false,
+                dots:false,
                 margin:0,
                 loop:true
             },
@@ -105,7 +106,36 @@ $(document).ready(function(){
                 loop:true
             }
         }
-    }); 
+    });
+    $('.blogposts-carousel').owlCarousel({
+        loop:true,
+        margin:20,
+        autoplay:true,
+        autoplayTimeout:2000,
+        autoplayHoverPause:true,
+        responsiveClass:false,
+        dots:true,
+        nav: true,
+        responsive:{
+            0:{
+                items:1,
+                nav:true,
+                loop:true
+            },
+            600:{
+                items:2,
+                dots:false,
+                nav:true
+            },
+            1000:{
+                items:4,
+                nav:true,
+                dots:false,
+                loop:true
+            }
+        }
+    });
+    
 })
 
 
