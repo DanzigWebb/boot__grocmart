@@ -75,53 +75,6 @@ b, strong
 
 
 
-    
-.timeline
-  padding: $gutter*2 0
-  +media-breakpoint-down(xs)
-    padding: $gutter*2 5%
-  &-item
-    padding: $gutter/2 0
-    position: relative
-    &:before
-      content: "\f192"
-      font-family: "Font Awesome 5 Free"
-      font-weight: 900
-      color: $accent
-      background-color: $gray
-      width: 1px
-      height: 100%
-      position: absolute
-      line-height: 450%
-      text-indent: -7px
-
-    &:nth-child(odd)
-      text-align: right
-      padding-right: 90px + $gutter
-      .timeline-item__img
-        right: $gutter
-      &:before
-        right: 0
-      +media-breakpoint-down(xs)
-        text-align: left
-        padding-left: 90px + $gutter
-        padding-right: 0
-        .timeline-item__img
-          left: $gutter
-        &:before
-          left: 0
-
-    &:nth-child(even)
-      +make-col-offset(6)
-      padding-left: 90px + $gutter
-      .timeline-item__img
-        left: $gutter
-      &:before
-        left: -1px
-      +media-breakpoint-down(xs)
-        +make-col-offset(0)
-        &:before
-          right: 0
 // слайдер
 .main-slider
   background-image: url(https://livedemo00.template-help.com/wt_prod-21756/images/slide-2.jpg)
@@ -138,7 +91,9 @@ b, strong
   line-height: 1.6
 .main-slider-heading__footer
   margin-bottom: 60px
-
+@media (max-width: 380px)
+  .about-us-heading__signature
+    display: none
 // о нас
 .about-us__img
   width: 100%
@@ -147,9 +102,14 @@ b, strong
   background-repeat: no-repeat
   height: auto
   background-position: bottom center
-
+  +media-breakpoint-down(md)
+    min-height: 500px
+  +media-breakpoint-down(xs)
+    min-height: 300px
 .about-us-heading
   padding: 130px 0
+  +media-breakpoint-down(md)
+    padding: 20px 0
 
 .about-us-preloader
   color: $green
@@ -192,20 +152,6 @@ b, strong
   right: 0
 
 
-@media (max-width: 992px)
-  .about-us-heading
-    padding-top: 20px
-  .about-us__img
-    min-height: 90vh
-    background-repeat: no-repeat
-@media (max-width: 400px)
-  .about-us-heading__signature
-    bottom: -80px
-  .about-us__img
-    min-height: 70vh
-@media (max-width: 330px)
-  .about-us__img
-    min-height: 50vh
 
 // особенности
 .specials--black
@@ -216,6 +162,7 @@ b, strong
   padding: 60px 0
   color: #fff
   position: relative
+  
   .fas
     display: block
     font-size: 39px
@@ -234,6 +181,98 @@ b, strong
   color: #fff
   margin-bottom: 20px
   display: block
+
+// товары 
+.products
+  padding: 100px 0
+.products-heading
+  text-align: center
+  display: flex
+  justify-content: center
+  flex-direction: column
+.products-heading__pre
+  color: $green
+  margin: 0
+.products-heading__title
+  margin-bottom: 20px
+.products-menu
+  position: relative
+  display: inline-block
+  padding: 10px 0
+  +media-breakpoint-down(xs)
+    position: absolute
+    display: flex
+    flex-direction: column
+    background-color: #fff
+    z-index: 1
+    padding: 20px 80px
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1)
+    right: 40px
+    left: 40px
+    margin: auto
+    margin-top: 20px
+.products-menu--none
+  +media-breakpoint-down(xs)
+    display: none
+
+.products-menu:before
+  position: absolute
+  content: ''
+  bottom: -1px
+  left: 0
+  height: 4px
+  width: 100%
+  border-radius: 6px
+  background: #d7d7d7
+  z-index: -1
+  +media-breakpoint-down(xs)
+    content: none
+.products-menu__link
+  margin-right: 20px
+  font-size: 14px
+  font-weight: 700
+  color: $gray
+  padding: 10px 0
+  z-index: 100
+  position: relative
+  +media-breakpoint-down(xs)
+    margin-right: 0
+    padding: 4px
+  &--active
+    color: $green
+    +media-breakpoint-down(xs)
+      border-bottom: none
+  &:before
+    position: absolute
+    content: ''
+    bottom: -4px
+    left: 0
+    right: 0
+    margin: auto
+    height: 4px
+    width: 0
+    border-radius: 6px
+    background: $green
+    z-index: -1
+    transition: $animate
+    +media-breakpoint-down(xs)
+      content: none
+.products-menu__link:hover
+  color: $green
+.products-menu__link:hover:before
+  width: 100%
+.products-menu__link:nth-child(4)
+  margin-right: 0
+
+.products-mobile-button
+  font-size: 14px
+  border: 2px $black solid
+  border-radius: 7px
+  font-weight: 600
+  padding: 5px 15px
+  display: none
+  +media-breakpoint-down(xs)
+    display: inline
 
 // комментарии
 .comments
@@ -295,7 +334,10 @@ b, strong
         display: block
         color: $green
         font-style: italic
-
+body
+  .comments
+    .owl-nav
+      display: none
 // ссылки
 
 .salelinks-link__img
