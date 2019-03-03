@@ -43,6 +43,7 @@ b, strong
 // хедер
 .header-content
   height: 140px
+  
 
 .header-menu-list
   display: flex
@@ -212,7 +213,6 @@ b, strong
     right: 40px
     left: 40px
     margin: auto
-    margin-top: 20px
 .products-menu--none
   +media-breakpoint-down(xs)
     display: none
@@ -245,20 +245,22 @@ b, strong
     +media-breakpoint-down(xs)
       border-bottom: none
     &:before
-      position: absolute
-      content: ''
-      bottom: -4px
-      left: 0
-      right: 0
-      margin: auto
-      height: 4px
-      width: 0
-      border-radius: 6px
-      background: $green
-      z-index: -1
-      transition: $animate
-      +media-breakpoint-down(xs)
-        height: 0
+      width: 100% !important
+  &:before
+    position: absolute
+    content: ''
+    bottom: -4px
+    left: 0
+    right: 0
+    margin: auto
+    height: 4px
+    width: 0
+    border-radius: 6px
+    background: $green
+    z-index: -1
+    transition: $animate
+    +media-breakpoint-down(xs)
+      height: 0
 .products-menu__link:hover
   color: $green
 .products-menu__link:hover:before
@@ -275,11 +277,75 @@ b, strong
   display: none
   +media-breakpoint-down(xs)
     display: inline
-
+.products-mobile-filter__checked
+  display: none
+  +media-breakpoint-down(xs)
+    display: block
+    margin-top: 15px
+    font-size: 18px
+// карточка товара
 .products-box
   margin-top: 60px
-.products-box__item
-  text-align: center
+.products-box-item
+  border: $gutter/2 solid #fff
+  padding: $gutter
+  padding-bottom: 50px
+  margin-bottom: 2*$gutter
+  background-color: #f9f9f9
+  margin-bottom: $gutter
+  position: relative
+  overflow: hidden
+  border-radius: 15px
+  transition: $animate
+.products-box-item__special
+  position: absolute
+  top: 20px
+  right: 20px
+  font-weight: 600
+  padding: 6px 16px
+  background-color: $green
+  color: #fff
+  border-radius: 12px
+  
+.products-box-item__special--new
+  background-color: $accent
+.products-box-img-wrapper
+  height: 190px
+  img
+    width: 100%
+    max-width: 200px
+.add-to-card
+  font-family: "Font Awesome 5 Free"
+  font-size: 18px
+  border-radius: 100%
+  position: absolute
+  width: 25px
+  height: 25px
+  line-height: 7px
+  padding: 25px 27px
+  display: flex
+  justify-content: center
+  align-items: center
+  left: 0
+  right: 0
+  bottom: -80px
+  margin: auto
+  cursor: pointer
+.products-box-item:hover
+  box-shadow: inset 0px -1px 4px 2px rgba(0, 0, 0, 0.09)
+  background-color: #fff
+  .add-to-card
+    bottom: 10px
+// корзина
+.products-box-bracket
+  position: fixed
+  bottom: 20px
+  right: 20px
+  padding: 20px
+  background-color: #fff
+  border-radius: 15px
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.3)
+  z-index: 100
 
 // комментарии
 .comments

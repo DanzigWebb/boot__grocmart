@@ -71,7 +71,10 @@
       <p class="products-heading__pre p-preloader">Latest Arrivals</p>
       <h2 class="products-heading__title title-2">NEW PRODUCTS</h2>
       <div class="products-heading-wrap">
-        <a class="products-mobile-button site-link" href="javascript:void(0);" tabindex="1">Filter</a>
+        <div class="products-mobile-filter">
+          <a class="products-mobile-button site-link" href="javascript:void(0);" tabindex="1">Filter</a>
+          <p class="products-mobile-filter__checked p-preloader">ALL</p>
+        </div>
           <nav class="products-menu products-menu--none">
             <a href="#/" class="products-menu__link site-link products-menu__link--active">ALL</a>
             <a href="#/" class="products-menu__link site-link">VEGETABLES</a>
@@ -81,7 +84,13 @@
       </div>
     </div>
     <div class="products-box">
-      <div class="row">
+      <div class="row col">
+        <div class="products-box-bracket">
+          <h5 class="p-preloader">Your Bracket</h5>
+          <ul class="products-box-cart"></ul>
+        </div>
+      </div>
+      <div class="row products-item">
         <div class="products-box__item col-lg-3 col-md-4 col-sm-6 col-sx-12">
           <img src="https://livedemo00.template-help.com/wt_prod-21756/images/product-1-220x160.png" alt="" class="products-box__img">
           <p class="products-box__title title-4"></p>
