@@ -75,10 +75,12 @@ window.onload = function() {
         out += `<div class="products-box-item col-lg-3 col-md-4 col-sm-6 col-sx-12 mr-auto text-center">`;
         out += `<div class="products-box-img-wrapper"> <img src="${pict}"></div>`
         out += `<h5 class="title-3 products-box-item__title">${name}</h5>`;
-        out += `<p class="products-box-item__cost">$ ${cost}</p>`;
         if (sale == 1) {
           out += `<p class="products-box-item__special products-box-item__special--sale">sale</p>`;
-        };
+          out += `<p class="products-box-item__cost"><span class="products-box-item__cost--sale">$${Math.round(cost*1.4)}</span> $${cost}</p>`;
+        } else {
+          out += `<p class="products-box-item__cost">$${cost}</p>`;
+        }
         if (newGood == 1) {
           out += `<p class="products-box-item__special products-box-item__special--new">new</p>`;
         };
@@ -147,10 +149,10 @@ window.onload = function() {
       let li = '<li>';
       li += goods[key]['name'] + ' ';
       li += cart[key] + 'pc ';
-      li += ` <button name="plus-goods" class="products-box-cart__plus products-box-cart__button" data="${key}">+</button>`;
-      li += ` <button name="minus-goods" class="products-box-cart__minus products-box-cart__button" data="${key}">-</button>`;
-      li += goods[key]['cost']*cart[key] + ' $';
-      li += ` <button name="delete-goods" class="products-box-cart__delete products-box-cart__button" data="${key}">x</button>`;
+      li += ` <button name="plus-goods" class="products-box-cart__plus products-box-cart__button main-btn main-btn--bracket" data="${key}"></button>`;
+      li += ` <button name="minus-goods" class="products-box-cart__minus products-box-cart__button main-btn main-btn--bracket" data="${key}"></button>`;
+      li += goods[key]['cost']*cart[key] + '$';
+      li += ` <button name="delete-goods" class="products-box-cart__delete products-box-cart__button main-btn main-btn--bracket" data="${key}"></button>`;
       li += '</li>';
       sum += goods[key]['cost']*cart[key];
       ul.innerHTML += li;

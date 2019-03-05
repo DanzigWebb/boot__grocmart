@@ -283,6 +283,7 @@ b, strong
     display: block
     margin-top: 15px
     font-size: 18px
+
 // карточка товара
 .products-box
   margin-top: 60px
@@ -336,6 +337,14 @@ b, strong
   background-color: #fff
   .add-to-card
     bottom: 10px
+// цена на товар
+.products-box-item__cost
+  color: $green
+  font-weight: 500
+  font-size: 18px
+.products-box-item__cost--sale
+  text-decoration: line-through
+  color: $gray
 // корзина
 .products-box-bracket
   position: fixed
@@ -346,6 +355,35 @@ b, strong
   border-radius: 15px
   box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.3)
   z-index: 100
+.main-btn--bracket
+  border-radius: 100%
+  padding: 0px 3px
+  text-align: center
+  text-transform: none
+  text-decoration: none
+  font-size: 10px
+  letter-spacing: normal
+  width: 22px
+  height: 22px
+  font-weight: 900
+  font-family: "Font Awesome 5 Free"
+  line-height: 22px
+.products-box-cart
+  margin-left: -30px
+  li
+    list-style: none
+    text-transform: uppercase
+    margin-left: 10px
+    font-weight: 700
+    font-style: italic
+    font-size: 14px
+    line-height: 28px
+    &:last-child
+      color: $green
+      display: block
+      margin-top: 10px
+      font-size: 16px
+      margin-left: 0
 
 // комментарии
 .comments
