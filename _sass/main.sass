@@ -77,13 +77,24 @@ b, strong
 
 
 // слайдер
+.myslider
+  position: relative
+  min-height: 750px
+  overflow: hidden
+  display: flex
+  align-items: center
 .main-slider
   background-image: url(https://livedemo00.template-help.com/wt_prod-21756/images/slide-2.jpg)
   background-size: cover
   background-position: center center
-  min-height: 800px
+  min-height: 900px
+  width: 100%
   display: flex
   align-items: center
+  position: absolute
+  top: -100px
+  right: 0
+  z-index: -1
 .main-slider-heading
   color: #fff
 .main-slider-heading__header
@@ -154,30 +165,30 @@ b, strong
   right: 0
 
 
-
 // особенности
 .specials--black
   background-color: #000
 .specials
-  background-image: url(https://livedemo00.template-help.com/wt_prod-21756/images/parallax-3.jpg)
-  background-size: cover
   padding: 60px 0
-  color: #fff
   position: relative
-  
+  overflow: hidden
+  color: #fff
   .fas
     display: block
     font-size: 39px
     margin-bottom: 20px
     color: $green
-.specials:before
-  content: ''
+.specials-bg
   position: absolute
-  bottom: 0
-  left: 0
   right: 0
-  top: 0
+  top: -220px
+  width: 100%
+  height: 500px
+  background-image: url(https://livedemo00.template-help.com/wt_prod-21756/images/parallax-3.jpg)
+  background-size: cover
   background-color: rgba(0, 0, 0, 0.7)
+  filter: brightness(50%)
+  z-index: -1
 .specials__title
   font-weight: 700
   color: #fff
