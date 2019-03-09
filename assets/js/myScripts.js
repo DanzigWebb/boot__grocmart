@@ -100,8 +100,10 @@ function paralaxIt () {
   let toItem2 = document.querySelector('.specials');  
   window.onscroll = function () {
     let scroll = window.scrollY;
-    item.style.transform = "translate(0%, " + scroll /18 + "%";
-    item2.style.transform = "translate(0%, " + (scroll - toItem2.offsetTop + document.documentElement.clientHeight)  /22 + "%";
+    if (document.documentElement.clientWidth >= 1200) {
+      item.style.transform = "translate(0%, " + scroll /18 + "%";
+      item2.style.transform = "translate(0%, " + (scroll - toItem2.offsetTop + document.documentElement.clientHeight)  /22 + "%";
+    }
   }
 }
 paralaxIt ()
